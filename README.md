@@ -7,6 +7,7 @@ PowerBall Monte Carlo Web Worker Demo
 
 ```sh
 git clone https://github.com/RileyR387/pbmc-web
+cd pbmc-web
 ```
 
 <h4> If live-server is in your path:</h4>
@@ -29,8 +30,7 @@ npm run start
 Alternatively, you can probably open index.html in your browser or drop the files under SRC under any web directory.
 
 ```sh
-firefox src/index.html &
-disown
+firefox src/index.html
 ```
 
 Have fun!
