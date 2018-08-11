@@ -19,7 +19,6 @@ if( window.Worker ){
 
    var WorkerScriptSrc = "simulator.js";
    var sim = new Worker( WorkerScriptSrc );
-   //sim.addEventListener("message", ResponseHandler, false);
 
    $("button#play_now").click(function(){
       CloseSettings();
@@ -27,6 +26,7 @@ if( window.Worker ){
       lineCountIn.val( 20 );
       InitSim();
       sim.postMessage( { 'action' : 'GenerateLines'}  );
+      EnableRun();
       runBtn.click();
    });
 
@@ -53,13 +53,16 @@ if( window.Worker ){
    });
 
    stopBtn.click(function(){
-      DisableRun();
+      EnableClear();
       spinner.stop(spinTarget);
       sim.terminate();
+      DisableRun();
+      DisableStop();
    });
 
    clearBtn.click(function(){
-      DisableRun();
+      EnableRun();
+      DisableStop();
       OpenSettings();
       nMaxIn.val( '' );
       pMaxIn.val( '' );
@@ -68,6 +71,9 @@ if( window.Worker ){
       lineCountIn.val( '' );
       myNumbers.html( '' );
       results.html( '' );
+      DisableClear();
+      DisableRun();
+      EnableDraw();
       InitSim();
    });
 
