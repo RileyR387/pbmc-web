@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+      integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+      crossorigin="anonymous">
+<link rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+      integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r"
+      crossorigin="anonymous">
+<link rel="stylesheet" href="pbmc.css" >
+
+<style>
+   /* inline styles */
+</style>
+
+   <title>PBMC - PowerBall Monte Carlo</title>
+
+</head>
+<body>
+<div class="jumbotron">
+   <div class="container">
+      <h2>PowerBall Monte Carlo</h2>
+      <button id="play_now" class="btn btn-primary" name="play_now" title="Play Now!" >Play Now!</button>
+   </div> <!-- .container -->
+</div> <!-- .jumbotron -->
+
+<div class="container" id="primary_container" >
+   <div class="row">
+
+      <div class="col-md-4">
+            Run a Monte Carlo simulation against powerball numbers with your browser.
+            Playing less than 20 lines is not advised with default settings unless you're patient.
+         <div id="controls">
+            <button id="gen_now" class="btn btn-success btn-xs" type="button" name="generate" title="Generate" >Draw Lines</button>
+            <button id="run_sim" class="btn btn-default btn-xs disabled" type="button" name="run_sim" title="Run Simulation!" >Run Simulation</button>
+            <button id="stop"    class="btn btn-danger  btn-xs disabled" type="button" name="stop" title="Stop Simulation" >STOP</button>
+            <button id="clear"   class="btn btn-default btn-xs" type="button" name="clear" title="Clear Settings" >Clear</button>
+         </div>
+         <br>
+      </div>
+      <div class="col-md-8">
+         <div class="panel-group" id="settings" role="tablist" aria-multiselectable="true" >
+           <div class="panel panel-default">
+
+             <div class="panel-heading" role="tab" id="headingSettings">
+                  <h2 class="panel-title">
+                    <a  id="SettingsTarget"
+                        role="button"
+                        data-toggle="collapse"
+                        data-parent="#accordion"
+                        href="#collapseSettings"
+                        aria-expanded="true"
+                        aria-controls="collapseSettings"
+                     ><span class="caret"></span> Settings</a>
+                  </h2>
+             </div> <!-- .panel-heading -->
+             <div id="collapseSettings"
+                  class="panel-collapse collapse in"
+                   role="tabpanel"
+                   aria-labelledby="headingSettings">
+               <span class="label label-default">Lines to Play</span>
+               <input id="num_lines" class="form-control" type="number" autofocus="" required=""
+                      placeholder="Lines ( >=10 )" name="num_lines" >
+
+               <span class="label label-default">Regular Balls</span>
+               <input id="nCount" class="form-control" type="number" value="" autofocus="" required=""
+                      placeholder="5" name="num_lines" >
+
+               <span class="label label-default">Regular Ball Max</span>
+               <input id="nMax" class="form-control" type="number" value="" autofocus="" required=""
+                      placeholder="69" name="num_lines" >
+
+               <span class="label label-default">Power Balls</span>
+               <input id="pCount" class="form-control" type="number" value="" autofocus="" required=""
+                      placeholder="1" name="num_lines" >
+
+               <span class="label label-default">Power Ball Max</span>
+               <input id="pMax" class="form-control" type="number" value="" autofocus="" required=""
+                      placeholder="26" name="num_lines" >
+             </div> <!-- #collapseSettings -->
+
+             <div class="panel-heading" role="tab" id="headingResults">
+                  <h2 class="panel-title">
+                    <a  class="collapsed"
+                        id="ResultsTarget"
+                        role="button"
+                        data-toggle="collapse"
+                        data-parent="#accordion"
+                        href="#collapseResults"
+                        aria-expanded="false"
+                        aria-controls="collapseResults"
+                     ><span class="caret"></span> Results</a>
+                  </h2>
+             </div> <!-- .panel-heading -->
+             <div id="collapseResults" class="collapsed" >
+             </div> <!-- #collapseResults -->
+
+             <div class="panel-heading" role="tab" id="headingYourNumbers">
+                  <h2 class="panel-title">
+                    <a  class="collapsed"
+                        id="NumbersTarget"
+                        role="button"
+                        data-toggle="collapse"
+                        data-parent="#accordion"
+                        href="#collapseYourNumbers"
+                        aria-expanded="false"
+                        aria-controls="collapseYourNumbers"
+                     ><span class="caret"></span> Your Numbers</a>
+                  </h2>
+             </div> <!-- .panel-heading -->
+             <div id="collapseYourNumbers" class="collapsed" >
+             </div> <!-- #collapseYourNumbers -->
+
+           </div> <!-- .panel .panel-default -->
+         </div> <!-- .panel-group -->
+
+      </div>
+   </div> <!-- .row -->
+   <br>
+   <footer>
+      <p>&copy; 2016 RRappsDev.com</p>
+   </footer>
+</div> <!-- .container -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous">
+</script>
+<script src="https://fgnass.github.io/spin.js/spin.min.js"></script>
+<script src="pbmc.js" ></script>
+<script src="main.js" ></script>
+</body>
+</html>

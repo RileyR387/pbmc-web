@@ -1,0 +1,31 @@
+/**
+ * Author: Riley Raschke
+ * © 2016 rrappsdev.com
+ * DWTFYW Licensce - Just mention me
+ */
+
+/* Move down content because we have a fixed navbar that is 40px tall */
+body {
+   /*
+   padding-top: 10px;
+   padding-bottom: 10px;
+   */
+}
+.panel-title>a {
+   display: block;
+   margin: -10px -15px;
+   padding: 10px 15px 10px 10px;
+}
+.panel-title>a .caret {
+   margin-top: -4px;
+}
+.panel-title>a.collapsed .caret {
+   -webkit-transform: rotate(-90deg);
+   -moz-transform: rotate(-90deg);
+   transform: rotate(-90deg);
+}
+.panel-collapse {
+   /* background-color: #eea; */
+   padding: 10px 15px 10px 10px;
+}
+
