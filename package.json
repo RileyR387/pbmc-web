@@ -4,7 +4,7 @@
   "description": "PowerBall Monte Carlo Web Worker Demo",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "live-server ./"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,5 @@
   "homepage": "https://github.com/RileyR387/pbmc-web#readme",
   "devDependencies": {
     "live-server": "^1.2.0"
-  },
-  "dependencies": {
-    "spin.js": "^4.0.0"
   }
 }
