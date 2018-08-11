@@ -1,0 +1,30 @@
+{
+  "name": "pbmc-web",
+  "version": "1.0.0",
+  "description": "PowerBall Monte Carlo Web Worker Demo",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RileyR387/pbmc-web.git"
+  },
+  "keywords": [
+    "monto-carlo-simulation",
+    "webworker",
+    "web-worker"
+  ],
+  "author": "Riley Raschke",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RileyR387/pbmc-web/issues"
+  },
+  "homepage": "https://github.com/RileyR387/pbmc-web#readme",
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  },
+  "dependencies": {
+    "spin.js": "^4.0.0"
+  }
+}
